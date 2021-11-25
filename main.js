@@ -8,7 +8,10 @@ function pizza(size, crust, topping) {
 
 }
 
-let pizza1 = new pizza("large", "crispy", ["peperoni", "cheese"])
+let size = $('#size').val()
+let crust = $('#crust').val()
+
+let pizza1 = new pizza(size, crust, ["peperoni", "cheese"])
 
 
 switch (pizza1.size) {
@@ -21,43 +24,50 @@ switch (pizza1.size) {
     case "small":
         basePrice = 300;
     default:
-        alert("Error")
+        console.log("Error")
 
 }
 
 console.log(basePrice)
 
 
-switch (pizza1.crust) {
-    case "crispy":
-        crustPrice = 50;
-        break;
-    case "stuffed":
-        crustPrice = 100;
-        break;
-    case "gluten free":
-        crustPrice = 70;
-    default:
-        alert("Error")
+// switch (pizza1.crust) {
+//     case "crispy":
+//         crustPrice = 50;
+//         break;
+//     case "stuffed":
+//         crustPrice = 100;
+//         break;
+//     case "gluten free":
+//         crustPrice = 70;
+//     default:
+//         alert("Error")
 
-}
+// }
 
-console.log(crustPrice)
+// console.log(crustPrice)
 
-// toppings
+// // toppings
 
-let toppingOptions = ["Cheese", "Peperoni", "Salami", "Pineapple", "Pickles"]
-let toppingPrices = [50, 70, 40, 20, 20]
-
-
-let tPrice = (topping, ) => {
-    let num = toppingOptions.findIndex(rank => rank === topping);
-    toppingOptions[num] = toppingPrices[num]
-    console.log(toppingPrices[num])
+// let toppingOptions = ["Cheese", "Peperoni", "Salami", "Pineapple", "Pickles"]
+// let toppingPrices = [50, 70, 40, 20, 20]
+// let toppingTotal = []
 
 
-}
+// let tPrice = (topping) => {
+//     let num = toppingOptions.findIndex(rank => rank === topping);
+//     toppingOptions[num] = toppingPrices[num]
+//     toppingTotal.push(toppingPrices[num])
+//     sumTotal = toppingTotal.reduce((a, b) => a + b)
 
-tPrice("Salami")
-tPrice("Cheese")
-tPrice("Pineapple")
+//     console.log(sumTotal)
+
+
+// }
+
+// tPrice("Salami")
+
+
+// total = sumTotal + crustPrice + basePrice
+
+// console.log(total)
