@@ -3,6 +3,11 @@ function pizza(size, crust, topping) {
     this.crust = crust;
     this.topping = topping;
 }
+
+let eachTotal = []
+
+
+
 $('.top').mousedown(function(e) {
     e.preventDefault();
     $(this).prop('selected', !$(this).prop('selected'));
@@ -87,9 +92,16 @@ $("form#order").submit(function(event) {
 
     let newOrder = new pizza(size, crust, topping);
 
+    eachTotal.push(totalBill)
+
+    let totals = eachTotal.reduce((a, b) => a + b, 0)
+    console.log(totals)
 
 
-    $("ul#contacts").append("<li><span class='contacts'>" + newOrder.Order() + "</span></li>");
+    $("ul#orders").append("<li><span class='orders'>" + newOrder.Order() + " @ " +
+        totalBill + "</span></li>");
+    $("ul#orders").append("<li><span class='orders'>" + newOrder.Order() + " @ " +
+        totalBill + "</span></li>");
 
     $("select#size").val("");
     $("select#crust").val("");
