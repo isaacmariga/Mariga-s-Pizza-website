@@ -12,18 +12,19 @@
 
 <body>
     <div class="container">
-        <form action="" class="order">
+        <form action="" class="order" id="">
             <select class="form-select" id="size" aria-label="Default select example">
               <option selected>Size</option>
-              <option value="large">Large</option>
-              <option value="medium">Medium</option>
-              <option value="small">Small</option>
+              <option class = "l" value="large">Large</option>
+              <option class = "l"value="medium">Medium</option>
+              <option class = "l"value="small">Small</option>
             </select>
+
             <select class="form-select" id="crust" aria-label="Default select example">
               <option selected>Crust</option>
-              <option value="crispy">Crispy</option>
-              <option value="stuffed">Stuffed</option>
-              <option value="gluten_free">Gluten Free</option>
+              <option class = "m"value="crispy">Crispy</option>
+              <option class = "m"value="stuffed">Stuffed</option>
+              <option class = "m"value="gluten_free">Gluten Free</option>
              </select>
 
             <select class="select" id="toppings" multiple data-mdb-clear-button="true">
@@ -38,6 +39,7 @@
                 <label class="radio-inline"><input type="radio" name="optradio" id = "delivery">Delivery</label>
             </div>
             <label class="form-label select-label"></label>
+            <button id="bill" type="submit" class="btn">bill</button>
             <button type="submit" class="btn">Add</button>
         </form>
 
@@ -49,15 +51,16 @@
                 <div id="show_order">
                     <h2></h2>
 
-                    <p>Size: <span class="first-name"></span></p>
-                    <p>Crust: <span class="last-name"></span></p>
-                    <p>Toppings: <span class="last-name"></span></p>
+                    <p>Size: <span class="order_size"></span></p>
+                    <p>Crust: <span class="order_crust"></span></p>
+                    <p>Toppings: <span class="order_topping"></span></p>
                 </div>
             </div>
 
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-            <script src="main.js"></script>
+            <!-- <script src="main.js"></script> -->
+            <script src="/main copy.js"></script>
             <!-- <script src="test.js"></script> -->
 </body>
 
