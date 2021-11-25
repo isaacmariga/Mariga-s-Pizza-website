@@ -43,3 +43,21 @@ switch (pizza1.crust) {
 }
 
 console.log(crustPrice)
+
+// toppings
+
+let toppingOptions = ["Cheese", "Peperoni", "Salami", "Pineapple", "Pickles"]
+let toppingPrices = [50, 70, 40, 20, 20]
+
+
+let tPrice = (topping, ) => {
+    let num = toppingOptions.findIndex(rank => rank === topping);
+    toppingOptions[num] = toppingPrices[num]
+    console.log(toppingPrices[num])
+
+
+}
+
+tPrice("Salami")
+tPrice("Cheese")
+tPrice("Pineapple")
