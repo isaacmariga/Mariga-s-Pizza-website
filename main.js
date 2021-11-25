@@ -53,17 +53,23 @@ switch (pizza1.crust) {
 
 }
 let toppingOptions = ["ham", "peperoni", "mushroom", "steak", "pickles"]
+let toppingPrices = [50, 70, 40, 20, 20]
+let toppingAmount = [];
 
-let findPositions = (first, second) => {
-    let toppingTotal = [];
+
+let findPrices = (first, second) => {
     first.forEach((element, index) => {
         if (second.includes(element)) {
-            toppingTotal.push(index);
+            toppingAmount.push(toppingPrices[index]);
         };
     });
-    return toppingTotal;
+    return toppingAmount;
 };
-console.log(findPositions(toppingOptions, topping));
+findPrices(toppingOptions, topping);
+
+let toppingTotal = toppingAmount.reduce((a, b) => a + b, 0)
+
+console.log(toppingTotal)
 
 
 
