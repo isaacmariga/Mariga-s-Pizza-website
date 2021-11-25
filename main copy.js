@@ -85,6 +85,18 @@ $("form").click(function() {
         return this.size + " " + this.crust + " " + this.topping;
     }
 
+    $("p#sizePrint").html("<span class='order_size'>" + "Size = " +
+        size + " @ " +
+        sizePrice + "</span>");
+    $("p#crustPrint").html("<span class='order_size'>" + "Size = " +
+        size + " @ " +
+        sizePrice + "</span>");
+    $("p#toppingsPrint").html("<span class='order_size'>" + "Size = " +
+        size + " @ " +
+        sizePrice + "</span>");
+    $("p#totalsPrint").html("<span class='order_size'>" + "Size = " +
+        size + " @ " +
+        sizePrice + "</span>");
 
 })
 $("form#order").submit(function(event) {
