@@ -100,8 +100,8 @@ $("form#order").submit(function(event) {
 
     $("ul#orders").append("<li><span class='orders'>" + newOrder.Order() + " @ " +
         totalBill + "</span></li>");
-    $("ul#orders").append("<li><span class='orders'>" + newOrder.Order() + " @ " +
-        totalBill + "</span></li>");
+    $("p#totals").html("<span class='order_size'>" + "Total = " +
+        totals + "</span>");
 
     $("select#size").val("");
     $("select#crust").val("");
