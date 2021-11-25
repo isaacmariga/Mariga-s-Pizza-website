@@ -10,7 +10,7 @@ function pizza(size, crust, topping) {
 
 let size = $('#size').val();
 let crust = $('#crust').val();
-let toppings = $('#toppings').val();
+let topping = $('#toppings').val();
 
 $('.top').mousedown(function(e) {
     e.preventDefault();
@@ -19,7 +19,7 @@ $('.top').mousedown(function(e) {
 });
 
 
-let pizza1 = new pizza(size, crust, toppings)
+let pizza1 = new pizza(size, crust, topping)
 
 
 switch (pizza1.size) {
@@ -32,7 +32,7 @@ switch (pizza1.size) {
     case "small":
         basePrice = 300;
     default:
-        console.log("Error")
+        // console.log("Error")
 
 }
 
@@ -46,12 +46,33 @@ switch (pizza1.crust) {
     case "stuffed":
         crustPrice = 100;
         break;
-    case "gluten free":
+    case "gluten_free":
         crustPrice = 70;
     default:
-        alert("Error")
+        // console.log("Error")
 
 }
+let toppingOptions = ["ham", "peperoni", "mushroom", "steak", "pickles"]
+
+let findPositions = (first, second) => {
+    let toppingTotal = [];
+    first.forEach((element, index) => {
+        if (second.includes(element)) {
+            toppingTotal.push(index);
+        };
+    });
+    return toppingTotal;
+};
+console.log(findPositions(toppingOptions, topping));
+
+
+
+// let num = toppingOptions.findIndex(rank => rank === topping);
+
+// console.log(num)
+
+// toppingTotal.push()
+
 
 // console.log(crustPrice)
 
