@@ -12,38 +12,53 @@
 
 <body>
     <div class="container">
+        <form action="" class="order">
+            <select class="form-select" id="size" aria-label="Default select example">
+              <option selected>Size</option>
+              <option value="large">Large</option>
+              <option value="medium">Medium</option>
+              <option value="small">Small</option>
+            </select>
+            <select class="form-select" id="crust" aria-label="Default select example">
+              <option selected>Crust</option>
+              <option value="crispy">Crispy</option>
+              <option value="stuffed">Stuffed</option>
+              <option value="gluten_free">Gluten Free</option>
+             </select>
 
-        <select class="form-select" id="size" aria-label="Default select example">
-        <option selected>Size</option>
-        <option value="large">Large</option>
-        <option value="medium">Medium</option>
-        <option value="small">Small</option>
-      </select>
-        <select class="form-select" id="crust" aria-label="Default select example">
-        <option selected>Crust</option>
-        <option value="crispy">Crispy</option>
-        <option value="stuffed">Stuffed</option>
-        <option value="gluten_free">Gluten Free</option>
-      </select>
+            <select class="select" id="toppings" multiple data-mdb-clear-button="true">
+               <option value="pepperoni" class="top">Pepperoni</option>
+               <option value="ham"class="top">Ham</option>
+               <option value="steak"class="top">Steak</option>
+               <option value="mushroom"class="top">Mushroom</option>
+               <option value="chicken"class="top">Chicken</option>
+             </select>
+            <div class="radios">
+                <label class="radio-inline"><input type="radio" name="optradio" checked>Pick-up</label>
+                <label class="radio-inline"><input type="radio" name="optradio" id = "delivery">Delivery</label>
+            </div>
+            <label class="form-label select-label"></label>
+            <button type="submit" class="btn">Add</button>
+        </form>
 
-        <select class="select" id="toppings" multiple data-mdb-clear-button="true">
-       <option value="pepperoni" class="top">Pepperoni</option>
-        <option value="ham"class="top">Ham</option>
-        <option value="steak"class="top">Steak</option>
-        <option value="mushroom"class="top">Mushroom</option>
-        <option value="chicken"class="top">Chicken</option>
-      </select>
-        <div class="radios">
-            <label class="radio-inline"><input type="radio" name="optradio" checked>Pick-up</label>
-            <label class="radio-inline"><input type="radio" name="optradio" id = "delivery">Delivery</label>
-        </div>
-        <label class="form-label select-label"></label>
-    </div>
+        <h2>Contacts:</h2>
+        <ul id="contacts">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="main.js"></script>
-    <!-- <script src="test.js"></script> -->
+
+            <div class="col-md-6">
+                <div id="show_order">
+                    <h2></h2>
+
+                    <p>Size: <span class="first-name"></span></p>
+                    <p>Crust: <span class="last-name"></span></p>
+                    <p>Toppings: <span class="last-name"></span></p>
+                </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="main.js"></script>
+            <!-- <script src="test.js"></script> -->
 </body>
 
 </html>

@@ -85,3 +85,22 @@
 
         }
     })
+
+
+    $("form#order").submit(function(event) {
+        event.preventDefault();
+
+        let newOrder = new pizza(size, crust, topping);
+
+        $("ul#contacts").append("<li><span class='contact'>" + newOrder.fullName() + "</span></li>");
+
+        $("input#new-first-name").val("");
+        $("input#new-last-name").val("");
+
+        $(".contact").last().click(function() {
+            $("#show-contact").show();
+            $("#show-contact h2").text(newContact.firstName);
+            $(".first-name").text(newContact.firstName);
+            $(".last-name").text(newContact.lastName);
+        });
+    });
