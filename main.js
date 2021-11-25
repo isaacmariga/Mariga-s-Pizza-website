@@ -8,10 +8,18 @@ function pizza(size, crust, topping) {
 
 }
 
-let size = $('#size').val()
-let crust = $('#crust').val()
+let size = $('#size').val();
+let crust = $('#crust').val();
+let toppings = $('#toppings').val();
 
-let pizza1 = new pizza(size, crust, ["peperoni", "cheese"])
+$('.top').mousedown(function(e) {
+    e.preventDefault();
+    $(this).prop('selected', !$(this).prop('selected'));
+    return false;
+});
+
+
+let pizza1 = new pizza(size, crust, toppings)
 
 
 switch (pizza1.size) {
@@ -28,22 +36,22 @@ switch (pizza1.size) {
 
 }
 
-console.log(basePrice)
+console.log(pizza1)
 
 
-// switch (pizza1.crust) {
-//     case "crispy":
-//         crustPrice = 50;
-//         break;
-//     case "stuffed":
-//         crustPrice = 100;
-//         break;
-//     case "gluten free":
-//         crustPrice = 70;
-//     default:
-//         alert("Error")
+switch (pizza1.crust) {
+    case "crispy":
+        crustPrice = 50;
+        break;
+    case "stuffed":
+        crustPrice = 100;
+        break;
+    case "gluten free":
+        crustPrice = 70;
+    default:
+        alert("Error")
 
-// }
+}
 
 // console.log(crustPrice)
 
