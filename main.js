@@ -74,4 +74,14 @@
 
         console.log(orderTotal)
 
+
+    })
+
+    $('.radios').on('click', () => {
+        if ($('#delivery').is(":checked")) {
+            deliveryFee = 200
+        } else {
+            deliveryFee = 0
+
+        }
     })
