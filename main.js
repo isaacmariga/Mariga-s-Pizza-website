@@ -26,3 +26,20 @@ switch (pizza1.size) {
 }
 
 console.log(basePrice)
+
+
+switch (pizza1.crust) {
+    case "crispy":
+        crustPrice = 50;
+        break;
+    case "stuffed":
+        crustPrice = 100;
+        break;
+    case "gluten free":
+        crustPrice = 70;
+    default:
+        alert("Error")
+
+}
+
+console.log(crustPrice)
