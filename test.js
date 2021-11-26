@@ -17,6 +17,27 @@
 // console.log(findPositions(toppingOptions, queries));
 
 
-$(document).ready(function() {
-    $('.multi_select').selectpicker();
-});
+// $(document).ready(function() {
+//     $('.multi_select').selectpicker();
+// });
+
+
+// , "mushroom", "pineapple", "tomatoes", "spinach", "broccoli", "cheese", "olives", "chillies", "pickles", "bell_peppers", "onions"
+
+// , 30, 20, 20, 30, 30, 40, 30, 10, 20, 20, 20
+let meatToppings = ["peperoni", "ham", "steak", "bacon", "chicken"]
+let meatPrices = [50, 70, 40, 40, 50]
+let veggieToppings = ["mushroom", "pineapple", "tomatoes", "spinach", "broccoli"]
+let veggiePrices = [30, 20, 20, 30, 30]
+let extraToppings = ["cheese", "olives", "chillies", "pickles", "bell_peppers", "onions"]
+let extraPrices = [40, 30, 10, 20, 20, 20]
+
+let toppingOptions = []
+let toppingPrices = []
+
+
+toppingOptions.push(meatToppings, veggieToppings, extraToppings)
+toppingPrices.push(meatPrices, veggiePrices, extraPrices)
+
+console.log(toppingOptions.flat())
+console.log(toppingPrices)
