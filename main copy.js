@@ -87,11 +87,6 @@ $("form").click(function() {
 
     }
 
-    // if (classic == "hawaian") {
-    //     toppings.push(["bacon", "tomatoes", "ham", "pineapple"], extraTopping)
-    // } else {
-    //     toppings.push(meatTopping, veggieTopping, extraTopping);
-    // }
 
     toppingOptions.push(meatOptions, veggieOptions, extraOptions),
         toppingPrices.push(meatPrices, veggiePrices, extraPrices)
