@@ -3,3 +3,85 @@
     padding: 0;
     border: 0;
 }
+
+h1,
+h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+h3,
+p {
+    font-family: 'Montserrat', sans-serif;
+    ;
+}
+
+h1 {
+    font-size: 10em;
+    /* font-size: 16vw; */
+}
+
+h3 {
+    font-size: 2em;
+}
+
+.hero {
+    display: grid;
+    height: 100vh;
+    width: auto;
+    background-color: rgba(0, 0, 0, 0.521);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* place-items: center; */
+    justify-items: center;
+    justify-items: right;
+    color: white;
+    padding: 10vw;
+    overflow: none;
+}
+
+.hero_text {
+    text-align: right;
+    justify-items: right;
+    align-self: right;
+    text-justify: center;
+}
+
+.hero_buttons {
+    margin: 2em;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-rows: 2fr 1fr;
+    gap: 1em;
+    place-items: center;
+}
+
+.order_button {
+    border-radius: 40px;
+    padding: 30px 60px;
+}
+
+.about_button {
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.social_container {
+    display: grid;
+    grid-template-columns: 3fr 1fr 3fr 1fr 3fr;
+    gap: 10px;
+    place-items: center;
+}
+
+.social {
+    height: 40px;
+    padding-right: none;
+}
+
+.order_page {
+    height: 100vh;
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10vw;
+}
