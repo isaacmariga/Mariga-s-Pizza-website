@@ -5,7 +5,8 @@
 }
 
 h1,
-h2 {
+h2,
+h4 {
     font-family: 'Playfair Display', serif;
 }
 
@@ -20,8 +21,16 @@ h1 {
     /* font-size: 16vw; */
 }
 
+h2 {
+    font-size: 2.5em;
+}
+
 h3 {
     font-size: 2em;
+}
+
+h4 {
+    font-size: 1.5em;
 }
 
 .hero {
@@ -105,4 +114,33 @@ h3 {
 .cc_btn {
     padding: 30px 50px;
     border-radius: 40px;
+}
+
+#classics_container {
+    display: none;
+}
+
+.order_page>form>div {
+    margin: 30px 0px;
+}
+
+.order_page>form>div>div>div {
+    margin: 30px 0px;
+}
+
+#meat_toppings {
+    display: none;
+}
+
+.order_form {
+    padding: 1em 3em;
+    background-color: rgba(0, 0, 0, 0.418);
+    border-radius: 20px;
+    margin: 2em;
+    box-shadow: 5px 10px 5px lightseagreen;
+}
+
+#current_total {
+    padding: 10px;
+    background-color: lime;
 }

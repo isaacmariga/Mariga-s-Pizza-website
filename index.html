@@ -32,7 +32,7 @@
         </div>
 
         <div class="social_container">
-            <h2>Contact Us</h2>
+            <h4>Contact Us</h4>
             <img class="social" src="/static/Images/telephone-call.png" alt="Tel_logo">
             <p>Tel : +254 000000</p>
             <img class="social" src="/static/Images/twitter.png" alt="Twitter_logo">
@@ -53,15 +53,14 @@
         </div>
     </section>
     <section class="order_page">
-
         <form action="" class="order_form" id="order_form">
             <div>
                 <label for="">Size</label>
                 <select class="form-select" id="size" aria-label="Default select example"> 
                 <option selected>Size</option>
-              <option class = "l" value="large">Large</option>
-              <option class = "l"value="medium">Medium</option>
-              <option class = "l"value="small">Small</option>
+                <option class = "l" value="large">Large</option>
+                <option class = "l"value="medium">Medium</option>
+                <option class = "l"value="small">Small</option>
             </select>
             </div>
             <div>
@@ -73,7 +72,7 @@
                 <option class = "m"value="gluten_free">Gluten Free</option>
              </select>
             </div>
-            <div>
+            <div id="classics_container">
                 <label for="classics">Classic Pizza </label>
                 <select class="form-select" id="classic" aria-label="Default select example">
                 <option value= "classics"selected>Classics</option>
@@ -86,26 +85,28 @@
             </div>
 
             <div>
-                <div>
-                    <label for="meat_topping">Meat toppings </label>
-                    <select class="select_toppings" id="meat_toppings" multiple data-mdb-clear-button="true">
+                <div id="pure_custom">
+                    <div>
+                        <label for="meat_topping">Meat toppings </label>
+                        <select class="select_toppings" id="meat_toppings" multiple>
                     <option value="pepperoni" class="top">Pepperoni</option>
                     <option value="ham"class="top">Ham</option>
                     <option value="steak"class="top">Steak</option>
                     <option value="bacon"class="top">Bacon</option>
                     <option value="chicken"class="top">Chicken</option>
                      </select>
-                </div>
+                    </div>
 
-                <div>
-                    <label for="vegetable_topping">Vegetable toppings </label>
-                    <select class="select_toppings" id="veggie_toppings" multiple data-mdb-clear-button="true">
+                    <div>
+                        <label for="vegetable_topping">Vegetable toppings </label>
+                        <select class="select_toppings" id="veggie_toppings" multiple>
                     <option value="mushrooms" class="top">Mushrooms</option>
                     <option value="pineapple"class="Pineapple">Pineapple</option>
                     <option value="tomatoes"class="top">Tomatoes</option>
                     <option value="spinach"class="Spinach">Spinach</option>
                     <option value="broccoli"class="top">Broccoli</option>
                     </select>
+                    </div>
                 </div>
                 <div>
                     <label for="extra_topping">Extra toppings </label>
@@ -120,17 +121,18 @@
                 </div>
             </div>
             <div>
-                <button id="submit" type="submit" class="btn">Another Order</button>
+
+                <span id="current_total"><p> Total</p></span>
+
+                <div>
+                    <button id="submit" type="submit" class="btn">Another Order</button>
+                </div>
             </div>
-            <div>
             </div>
         </form>
 
         <div>
-            <form action="">
-                <button type="" id="btn">Current total</button>
 
-            </form>
             <h2>Order Items</h2>
             <p id="sizePrint"> <span class="order_size"></span></p>
             <p id="crustPrint"> <span class="order_size"></span></p>

@@ -172,4 +172,11 @@ $("form#order_form").submit(function(event) {
 
 });
 
-$("#custom_btn").click( => )
+$("#classic_btn").click(function() {
+    $("#classics_container").show();
+    $("#pure_custom").hide();
+})
+$("#custom_btn").click(function() {
+    $("#classics_container").hide();
+    $("#pure_custom").show();
+})
