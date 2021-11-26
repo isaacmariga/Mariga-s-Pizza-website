@@ -6,13 +6,18 @@ function pizza(size, crust, topping) {
 
 let eachTotal = []
 
-
-
-$('.top').mousedown(function(e) {
-    e.preventDefault();
-    $(this).prop('selected', !$(this).prop('selected'));
-    return false;
+$(document).ready(function() {
+    $('.select_toppings').selectpicker();
 });
+
+// $('.top').mousedown(function(e) {
+//     e.preventDefault();
+//     $(this).prop('selected', !$(this).prop('selected'));
+//     return false;
+// });
+
+
+
 
 $("form").click(function() {
     size = $('#size').val();
@@ -69,6 +74,8 @@ $("form").click(function() {
 
     let toppingTotal = toppingAmount.reduce((a, b) => a + b, 0)
 
+    console.log(toppingTotal)
+
     // console.log(size + crustPrice + toppingTotal)
 
 
@@ -78,6 +85,7 @@ $("form").click(function() {
         delivery = 0
     }
 
+    itemsTotal = sizePrice + crustPrice + toppingTotal
     totalBill = sizePrice + crustPrice + toppingTotal + delivery
     console.log(totalBill)
 
@@ -88,73 +96,40 @@ $("form").click(function() {
     $("p#sizePrint").html("<span class='order_size'>" + "Size = " +
         size + " @ " +
         sizePrice + "</span>");
-    $("p#crustPrint").html("<span class='order_size'>" + "Size = " +
+    $("p#crustPrint").html("<span class='order_size'>" + "Crust = " +
+        crust + " @ " +
+        crustPrice + "</span>");
+    $("p#toppingsPrint").html("<span class='order_size'>" + "Toppings = " +
+        topping + " @ " +
+        toppingTotal + "</span>");
+    $("p#totalsPrint").html("<span class='order_size'>" + "Total = " +
         size + " @ " +
-        sizePrice + "</span>");
-    $("p#toppingsPrint").html("<span class='order_size'>" + "Size = " +
-        size + " @ " +
-        sizePrice + "</span>");
-    $("p#totalsPrint").html("<span class='order_size'>" + "Size = " +
-        size + " @ " +
-        sizePrice + "</span>");
+        itemsTotal + "</span>");
+
+
+
 
 })
 $("form#order").submit(function(event) {
+    // $("form#submit").submit(function(event) {
+
     event.preventDefault();
 
     let newOrder = new pizza(size, crust, topping);
+
+
 
     eachTotal.push(totalBill)
 
     let totals = eachTotal.reduce((a, b) => a + b, 0)
     console.log(totals)
 
-
     $("ul#orders").append("<li><span class='orders'>" + newOrder.Order() + " @ " +
         totalBill + "</span></li>");
     $("p#totals").html("<span class='order_size'>" + "Total = " +
         totals + "</span>");
 
-    $("select#size").val("");
-    $("select#crust").val("");
-    $("input#delivery").val("");
+    $("#top1:selected").removeAttr("selected")
 
-    $(".contact").last().click(function() {
-        $("#show-order").show();
-        $("#show-order h2").text(newOrder.size);
-        $(".order_size").text(newOrder.size);
-        $(".order_crust").text(newOrder.crust);
-        $(".order_topping").text(newOrder.topping);
 
-        console.log(newOrder)
-    });
 });
-
-
-
-
-
-
-// $("form#order").submit(function(event) {
-//     event.preventDefault();
-
-//     let newOrder = new pizza(size, crust, topping);
-
-
-
-//     $("ul#contacts").append("<li><span class='contact'>" + newOrder.fullName() + "</span></li>");
-
-//     $("select#size").val("");
-//     $("select#crust").val("");
-//     $("input#delivery").val("");
-
-//     $(".contact").last().click(function() {
-//         $("#show-order").show();
-//         $("#show-order h2").text(newOrder.size);
-//         $(".order_size").text(newOrder.size);
-//         $(".order_crust").text(newOrder.crust);
-//         $(".order_topping").text(newOrder.topping);
-
-//         console.log(newOrder)
-//     });
-// });
