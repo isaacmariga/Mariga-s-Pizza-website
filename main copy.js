@@ -1,10 +1,11 @@
-function pizza(size, crust, topping) {
+function pizza(size, crust, toppings) {
     this.size = size;
     this.crust = crust;
-    this.topping = topping;
+    this.toppings = toppings;
 }
 
 let eachTotal = []
+let toppings = []
 
 $(document).ready(function() {
     $('.select_toppings').selectpicker();
@@ -63,8 +64,8 @@ $("form").click(function() {
     let extraPrices = [40, 30, 10, 20, 20, 20]
     let classicOptions = ["hawaian"]
 
-    let toppingOptions = []
-    let toppingPrices = []
+    let toppingOptions = [];
+    let toppingPrices = [];
     let toppings = [];
 
 
@@ -151,19 +152,15 @@ $("form").click(function() {
 
 
 })
-$("form#order").submit(function(event) {
-    // $("form#submit").submit(function(event) {
-
+$("form#order_form").submit(function(event) {
     event.preventDefault();
 
-    let newOrder = new pizza(size, crust, topping);
-
-
+    let newOrder = new pizza(size, crust, toppings);
 
     eachTotal.push(totalBill)
 
     let totals = eachTotal.reduce((a, b) => a + b, 0)
-        // console.log(totals)
+    console.log(newOrder.Order())
 
     $("ul#orders").append("<li><span class='orders'>" + newOrder.Order() + " @ " +
         totalBill + "</span></li>");

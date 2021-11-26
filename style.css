@@ -26,7 +26,7 @@ h3 {
 
 .hero {
     display: grid;
-    height: 100vh;
+    height: 100%;
     width: auto;
     background-color: rgba(0, 0, 0, 0.521);
     background-size: cover;
@@ -36,7 +36,7 @@ h3 {
     justify-items: right;
     color: white;
     padding: 10vw;
-    overflow: none;
+    overflow: hidden;
 }
 
 .hero_text {
@@ -82,6 +82,6 @@ h3 {
     height: 100vh;
     width: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     padding: 10vw;
 }

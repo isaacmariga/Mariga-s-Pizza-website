@@ -43,60 +43,75 @@
     </div>
     <section class="order_page">
 
-        <form action="" class="order" id="order">
-            <select class="form-select" id="size" aria-label="Default select example">
-              <option selected>Size</option>
+        <form action="" class="order_form" id="order_form">
+            <div>
+                <label for="">Size</label>
+                <select class="form-select" id="size" aria-label="Default select example"> 
+                <option selected>Size</option>
               <option class = "l" value="large">Large</option>
               <option class = "l"value="medium">Medium</option>
               <option class = "l"value="small">Small</option>
             </select>
-
-            <select class="form-select" id="crust" aria-label="Default select example">
-              <option selected>Crust</option>
-              <option class = "m"value="crispy">Crispy</option>
-              <option class = "m"value="stuffed">Stuffed</option>
-              <option class = "m"value="gluten_free">Gluten Free</option>
+            </div>
+            <div>
+                <label for="">Crust</label>
+                <select class="form-select" id="crust" aria-label="Default select example">
+                <option selected>Crust</option>
+                <option class = "m"value="crispy">Crispy</option>
+                <option class = "m"value="stuffed">Stuffed</option>
+                <option class = "m"value="gluten_free">Gluten Free</option>
              </select>
-
-            <label for="classics">Classic Pizza </label>
-            <select class="form-select" id="classic" aria-label="Default select example">
-                <option selected>Classics</option>
+            </div>
+            <div>
+                <label for="classics">Classic Pizza </label>
+                <select class="form-select" id="classic" aria-label="Default select example">
+                <option value= "classics"selected>Classics</option>
                <option value="hawaian" class="top">Hawaian</option>
                <option value="pepperoni_pizza"class="top">Pepperoni Pizza</option>
                <option value="meat_lovers"class="top">Meat Lovers</option>
                <option value="veggie"class="top">Veggie</option>
                <option value="chicken_mushroom"class="top">Chicken & Mushroom</option>
              </select>
+            </div>
 
+            <div>
+                <div>
+                    <label for="meat_topping">Meat toppings </label>
+                    <select class="select_toppings" id="meat_toppings" multiple data-mdb-clear-button="true">
+                    <option value="pepperoni" class="top">Pepperoni</option>
+                    <option value="ham"class="top">Ham</option>
+                    <option value="steak"class="top">Steak</option>
+                    <option value="bacon"class="top">Bacon</option>
+                    <option value="chicken"class="top">Chicken</option>
+                     </select>
+                </div>
 
-            <label for="meat_topping">Meat toppings </label>
-            <select class="select_toppings" id="meat_toppings" multiple data-mdb-clear-button="true">
-               <option value="pepperoni" class="top">Pepperoni</option>
-               <option value="ham"class="top">Ham</option>
-               <option value="steak"class="top">Steak</option>
-               <option value="bacon"class="top">Bacon</option>
-               <option value="chicken"class="top">Chicken</option>
+                <div>
+                    <label for="vegetable_topping">Vegetable toppings </label>
+                    <select class="select_toppings" id="veggie_toppings" multiple data-mdb-clear-button="true">
+                    <option value="mushrooms" class="top">Mushrooms</option>
+                    <option value="pineapple"class="Pineapple">Pineapple</option>
+                    <option value="tomatoes"class="top">Tomatoes</option>
+                    <option value="spinach"class="Spinach">Spinach</option>
+                    <option value="broccoli"class="top">Broccoli</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="extra_topping">Extra toppings </label>
+                    <select class="select_toppings" id="extra_toppings" multiple data-mdb-clear-button="true">
+                    <option value="cheese" class="top">Cheese</option>
+                     <option value="olives"class="top">Olives</option>
+                     <option value="chillies"class="top">Chillies</option>
+                     <option value="pickles"class="top">Pickles</option>
+                     <option value="bell_peppers"class="top">Bell Peppers</option>
+                     <option value="Onion"class="Onion">Onion</option>
              </select>
-            <label for="vegetable_topping">Vegetable toppings </label>
-            <select class="select_toppings" id="veggie_toppings" multiple data-mdb-clear-button="true">
-               <option value="mushrooms" class="top">Mushrooms</option>
-               <option value="pineapple"class="Pineapple">Pineapple</option>
-               <option value="tomatoes"class="top">Tomatoes</option>
-               <option value="spinach"class="Spinach">Spinach</option>
-               <option value="broccoli"class="top">Broccoli</option>
-             </select>
-            <label for="extra_topping">Extra toppings </label>
-            <select class="select_toppings" id="extra_toppings" multiple data-mdb-clear-button="true">
-               <option value="cheese" class="top">Cheese</option>
-               <option value="olives"class="top">Olives</option>
-               <option value="chillies"class="top">Chillies</option>
-               <option value="pickles"class="top">Pickles</option>
-               <option value="bell_peppers"class="top">Bell Peppers</option>
-               <option value="Onion"class="Onion">Onion</option>
-             </select>
-
-            <label class="form-label select-label"></label>
-            <button id="submit" type="submit" class="btn">Another Order</button>
+                </div>
+            </div>
+            <div>
+                <label class="form-label select-label"></label>
+                <button id="submit" type="submit" class="btn">Another Order</button>
+            </div>
 
         </form>
 
@@ -115,8 +130,7 @@
 
         </div>
     </section>
-
-    <section class="delivery_page">
+    <section>
         <div>
             <h2>Delivery or pickup</h2>
             <form action="">
