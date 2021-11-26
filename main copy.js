@@ -68,13 +68,30 @@ $("form").click(function() {
     let toppings = [];
 
 
+    switch (classic) {
+        case "hawaian":
+            toppings.push(["bacon", "tomatoes", "ham", "pineapple"], extraTopping);
+            break;
+        case "pepperoni_pizza":
+            toppings.push(["pepperoni", "tomatoes", "bell_peppers", "ham"], extraTopping);
+            break;
+        case "meat_lovers":
+            toppings.push(["bacon", "ham", "chicken", "steak"], extraTopping);
+            break;
+        case "veggie":
+            toppings.push(["spinach", "tomatoes", "broccoli", "mushroom"], extraTopping);
+            break;
+        case "chicken_mushroom":
+            toppings.push(["chicken", "tomatoes", "mushroom", "onion"], extraTopping);
+            break;
 
-
-    if (classic == "hawaian") {
-        toppings.push(["bacon", "tomatoes", "ham", "pineapple"], extraTopping)
-    } else {
-        toppings.push(meatTopping, veggieTopping, extraTopping);
     }
+
+    // if (classic == "hawaian") {
+    //     toppings.push(["bacon", "tomatoes", "ham", "pineapple"], extraTopping)
+    // } else {
+    //     toppings.push(meatTopping, veggieTopping, extraTopping);
+    // }
 
     toppingOptions.push(meatOptions, veggieOptions, extraOptions),
         toppingPrices.push(meatPrices, veggiePrices, extraPrices)
