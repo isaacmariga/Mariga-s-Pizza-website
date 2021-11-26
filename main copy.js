@@ -10,14 +10,6 @@ $(document).ready(function() {
     $('.select_toppings').selectpicker();
 });
 
-// $('.top').mousedown(function(e) {
-//     e.preventDefault();
-//     $(this).prop('selected', !$(this).prop('selected'));
-//     return false;
-// });
-
-
-
 
 $("form").click(function() {
     size = $('#size').val();
@@ -25,11 +17,9 @@ $("form").click(function() {
     meatTopping = $('#meat_toppings').val();
     veggieTopping = $('#veggie_toppings').val();
     extraTopping = $('#extra_toppings').val();
+    classic = $('#classic').val();
 
-    let toppings = [];
-    toppings.push(meatTopping, veggieTopping, extraTopping);
-
-    console.log(toppings.flat())
+    // console.log(classic)
 
     // Pizza Size
     switch (size) {
@@ -63,15 +53,6 @@ $("form").click(function() {
 
     }
 
-    // Pizza Toppings
-
-    // let meatToppings = ["peperoni", "ham", "steak", "bacon", "chicken"]
-    // toppingOptions = toppingOptions.push(meatToppings)
-    // console.log(toppingOptions)
-
-
-    // let toppingOptions = ["peperoni", "ham", "steak", "bacon", "chicken"]
-    // let toppingPrices = [50, 70, 40, 40, 50]
 
 
     let meatOptions = ["peperoni", "ham", "steak", "bacon", "chicken"]
@@ -80,13 +61,25 @@ $("form").click(function() {
     let veggiePrices = [30, 20, 20, 30, 30]
     let extraOptions = ["cheese", "olives", "chillies", "pickles", "bell_peppers", "onions"]
     let extraPrices = [40, 30, 10, 20, 20, 20]
+    let classicOptions = ["hawaian"]
 
     let toppingOptions = []
     let toppingPrices = []
+    let toppings = [];
 
 
-    toppingOptions.push(meatOptions, veggieOptions, extraOptions)
-    toppingPrices.push(meatPrices, veggiePrices, extraPrices)
+
+
+    if (classic == "hawaian") {
+        toppings.push(["bacon", "tomatoes", "ham", "pineapple"], extraTopping)
+    } else {
+        toppings.push(meatTopping, veggieTopping, extraTopping);
+    }
+
+    toppingOptions.push(meatOptions, veggieOptions, extraOptions),
+        toppingPrices.push(meatPrices, veggiePrices, extraPrices)
+
+    // console.log(toppings)
 
     // console.log(toppingOptions.flat())
     // console.log(toppingPrices)
@@ -100,20 +93,19 @@ $("form").click(function() {
                 toppingAmount.push(toppingPrices.flat()[index]);
             };
         });
-        return toppingAmount;
+        return toppingAmount.flat();
     };
 
-    // console.log(toppingAmount)
     findPrices(toppingOptions.flat(), toppings.flat());
 
     let toppingTotal = toppingAmount.reduce((a, b) => a + b, 0)
 
-    // console.log(toppingTotal)
+    console.log(toppingAmount)
+        // console.log(toppingTotal)
 
     // console.log(size + crustPrice + toppingTotal)
 
-    // Classic Pizza
-
+    let classicLabel = classic + "   :   "
 
 
     if ($('#delivery').is(":checked")) {
@@ -136,7 +128,7 @@ $("form").click(function() {
     $("p#crustPrint").html("<span class='order_size'>" + "Crust = " +
         crust + " @ " +
         crustPrice + "</span>");
-    $("p#toppingsPrint").html("<span class='order_size'>" + "Toppings = " +
+    $("p#toppingsPrint").html("<span class='order_size'>" + "Toppings = " + classicLabel + "  " +
         toppings.flat() + " @ " +
         toppingTotal + "</span>");
     $("p#totalsPrint").html("<span class='order_size'>" + "Total = " +
