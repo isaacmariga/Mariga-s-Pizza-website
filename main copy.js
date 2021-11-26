@@ -22,7 +22,14 @@ $(document).ready(function() {
 $("form").click(function() {
     size = $('#size').val();
     crust = $('#crust').val();
-    topping = $('#toppings').val();
+    meatTopping = $('#meat_toppings').val();
+    veggieTopping = $('#veggie_toppings').val();
+    extraTopping = $('#extra_toppings').val();
+
+    let toppings = [];
+    toppings.push(meatTopping, veggieTopping, extraTopping);
+
+    console.log(toppings.flat())
 
     // Pizza Size
     switch (size) {
@@ -67,18 +74,18 @@ $("form").click(function() {
     // let toppingPrices = [50, 70, 40, 40, 50]
 
 
-    let meatToppings = ["peperoni", "ham", "steak", "bacon", "chicken"]
+    let meatOptions = ["peperoni", "ham", "steak", "bacon", "chicken"]
     let meatPrices = [50, 70, 40, 40, 50]
-    let veggieToppings = ["mushroom", "pineapple", "tomatoes", "spinach", "broccoli"]
+    let veggieOptions = ["mushroom", "pineapple", "tomatoes", "spinach", "broccoli"]
     let veggiePrices = [30, 20, 20, 30, 30]
-    let extraToppings = ["cheese", "olives", "chillies", "pickles", "bell_peppers", "onions"]
+    let extraOptions = ["cheese", "olives", "chillies", "pickles", "bell_peppers", "onions"]
     let extraPrices = [40, 30, 10, 20, 20, 20]
 
     let toppingOptions = []
     let toppingPrices = []
 
 
-    toppingOptions.push(meatToppings, veggieToppings, extraToppings)
+    toppingOptions.push(meatOptions, veggieOptions, extraOptions)
     toppingPrices.push(meatPrices, veggiePrices, extraPrices)
 
     // console.log(toppingOptions.flat())
@@ -95,11 +102,13 @@ $("form").click(function() {
         });
         return toppingAmount;
     };
-    findPrices(toppingOptions.flat(), topping);
+
+    // console.log(toppingAmount)
+    findPrices(toppingOptions.flat(), toppings.flat());
 
     let toppingTotal = toppingAmount.reduce((a, b) => a + b, 0)
 
-    console.log(toppingTotal)
+    // console.log(toppingTotal)
 
     // console.log(size + crustPrice + toppingTotal)
 
@@ -115,10 +124,10 @@ $("form").click(function() {
 
     itemsTotal = sizePrice + crustPrice + toppingTotal;
     totalBill = sizePrice + crustPrice + toppingTotal + delivery;
-    console.log(totalBill)
+    // console.log(totalBill)
 
     pizza.prototype.Order = function() {
-        return this.size + " " + this.crust + " " + this.topping;
+        return this.size + " " + this.crust + " " + this.toppings.flat();
     }
 
     $("p#sizePrint").html("<span class='order_size'>" + "Size = " +
@@ -128,7 +137,7 @@ $("form").click(function() {
         crust + " @ " +
         crustPrice + "</span>");
     $("p#toppingsPrint").html("<span class='order_size'>" + "Toppings = " +
-        topping + " @ " +
+        toppings.flat() + " @ " +
         toppingTotal + "</span>");
     $("p#totalsPrint").html("<span class='order_size'>" + "Total = " +
         size + " @ " +
@@ -150,7 +159,7 @@ $("form#order").submit(function(event) {
     eachTotal.push(totalBill)
 
     let totals = eachTotal.reduce((a, b) => a + b, 0)
-    console.log(totals)
+        // console.log(totals)
 
     $("ul#orders").append("<li><span class='orders'>" + newOrder.Order() + " @ " +
         totalBill + "</span></li>");
