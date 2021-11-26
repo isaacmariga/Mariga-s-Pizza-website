@@ -20,15 +20,15 @@
 </head>
 
 <body>
-    <div class="hero" style=" background-image: linear-gradient( rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.73)),url(/static/Images/pineapple-and-pepperoni-pizza.jpg )">
+    <section class="hero" style=" background-image: linear-gradient( rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.73)),url(/static/Images/pineapple-and-pepperoni-pizza.jpg )">
         <div class="hero_text">
             <h1 class="text-sm-right">Mariga's <br> Pizza</h1>
             <h3>Welcome to Mariga's Pizza, <br> the home of Kenya's finest custom pizza
             </h3>
         </div>
         <div class="hero_buttons">
-            <span><button class="order_button">Order</button></span>
-            <span><button class="about_button">About Us</button></span>
+            <button class="order_button">Order</button>
+            <button class="about_button">About Us</button>
         </div>
 
         <div class="social_container">
@@ -40,7 +40,18 @@
 
         </div>
 
-    </div>
+    </section>
+    <section class="custom_classic">
+        <div>
+            <div>
+                <h2>Custom Pizza or Classic Pizza?</h2>
+            </div>
+            <div class="cc_buttons">
+                <button class="cc_btn" id="custom_btn">Custom</button>
+                <button class="cc_btn" id="classic_btn">Classic</button>
+            </div>
+        </div>
+    </section>
     <section class="order_page">
 
         <form action="" class="order_form" id="order_form">
@@ -109,19 +120,17 @@
                 </div>
             </div>
             <div>
-                <label class="form-label select-label"></label>
                 <button id="submit" type="submit" class="btn">Another Order</button>
             </div>
-
+            <div>
+            </div>
         </form>
 
         <div>
-            <h2>Orders:</h2>
-            <ul id="orders">
-                <p id="totals">Total = <span class="order_size"></span></p>
-        </div>
+            <form action="">
+                <button type="" id="btn">Current total</button>
 
-        <div>
+            </form>
             <h2>Order Items</h2>
             <p id="sizePrint"> <span class="order_size"></span></p>
             <p id="crustPrint"> <span class="order_size"></span></p>
@@ -129,6 +138,14 @@
             <p id="totalsPrint"><span class="order_size"></span></p>
 
         </div>
+
+        <div>
+            <h2>Orders:</h2>
+            <ul id="orders">
+                <p id="totals">Total = <span class="order_size"></span></p>
+        </div>
+
+
     </section>
     <section>
         <div>
