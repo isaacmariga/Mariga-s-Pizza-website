@@ -15,19 +15,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <section class="hero" style=" background-image: linear-gradient( rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.73)),url(/static/Images/pineapple-and-pepperoni-pizza.jpg )">
+    <section class="hero" style=" background-image: linear-gradient( rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.73)),url(/static/Images/shot-Crop.jpg )">
         <div class="hero_text">
             <h1 class="text-sm-right">Mariga's <br> Pizza</h1>
             <h3>Welcome to Mariga's Pizza, <br> the home of Kenya's finest custom pizza
             </h3>
         </div>
         <div class="hero_buttons">
-            <button class="order_button">Order</button>
+            <a href="#custom_classic"> <button class="order_button">Order</button></a>
             <button class="about_button">About Us</button>
         </div>
 
@@ -41,124 +41,140 @@
         </div>
 
     </section>
-    <section class="custom_classic">
+    <!-- <section id="custom_classic" class="custom_classic">
         <div>
             <div>
                 <h2>Custom Pizza or Classic Pizza?</h2>
             </div>
             <div class="cc_buttons">
-                <button class="cc_btn" id="custom_btn">Custom</button>
-                <button class="cc_btn" id="classic_btn">Classic</button>
+                <a href="#order_title"><button class="cc_btn" id="custom_btn">Custom</button></a>
+                <a href="#order_title"><button class="cc_btn" id="classic_btn">Classic</button></a>
             </div>
         </div>
-    </section>
-    <section class="order_page">
-        <form action="" class="order_form" id="order_form">
-            <div>
-                <label for="">Size</label>
-                <select class="form-select" id="size" aria-label="Default select example"> 
-                <option selected>Size</option>
-                <option class = "l" value="large">Large</option>
-                <option class = "l"value="medium">Medium</option>
-                <option class = "l"value="small">Small</option>
-            </select>
-            </div>
-            <div>
-                <label for="">Crust</label>
-                <select class="form-select" id="crust" aria-label="Default select example">
-                <option selected>Crust</option>
-                <option class = "m"value="crispy">Crispy</option>
-                <option class = "m"value="stuffed">Stuffed</option>
-                <option class = "m"value="gluten_free">Gluten Free</option>
-             </select>
-            </div>
-            <div id="classics_container">
-                <label for="classics">Classic Pizza </label>
-                <select class="form-select" id="classic" aria-label="Default select example">
-                <option value= "classics"selected>Classics</option>
-               <option value="hawaian" class="top">Hawaian</option>
-               <option value="pepperoni_pizza"class="top">Pepperoni Pizza</option>
-               <option value="meat_lovers"class="top">Meat Lovers</option>
-               <option value="veggie"class="top">Veggie</option>
-               <option value="chicken_mushroom"class="top">Chicken & Mushroom</option>
-             </select>
-            </div>
+    </section> -->
 
-            <div>
-                <div id="pure_custom">
+
+    <section class="order_page" style=" background-image:url(/static/Images/sahal-hameed-Nq9KlQTTEbQ-unsplash.jpg)">
+        <div>
+            <form action="" class="order_form" id="order_form">
+                <h2 id="order_title" class="order_title"> Kindly make your order</h2>
+
+                <div class="order_form_container">
+                    <label for="">Size</label>
+                    <select class="form-select" id="size" aria-label="Default select example"> 
+                        <option selected>Size</option>
+                     <option class = "l" value="large">Large</option>
+                     <option class = "l"value="medium">Medium</option>
+                     <option class = "l"value="small">Small</option>
+                     </select>
+                </div>
+                <div class="order_form_container">
+                    <label for="">Crust</label>
+                    <select class="form-select" id="crust" aria-label="Default select example">
+                         <option selected>Crust</option>
+                          <option class = "m"value="crispy">Crispy</option>
+                         <option class = "m"value="stuffed">Stuffed</option>
+                            <option class = "m"value="gluten_free">Gluten Free</option>
+                    </select>
+                </div>
+                <div class="order_form_container" id="classics_container">
+                    <label for="classics">Classic Pizza </label>
+                    <select class="form-select" id="classic" aria-label="Default select example">
+                     <option value= "classics"selected>Classics</option>
+                     <option value="hawaian" class="top">Hawaian</option>
+                     <option value="pepperoni_pizza"class="top">Pepperoni Pizza</option>
+                     <option value="meat_lovers"class="top">Meat Lovers</option>
+                     <option value="veggie"class="top">Veggie</option>
+                     <option value="chicken_mushroom"class="top">Chicken & Mushroom</option>
+                     </select>
+                </div>
+
+                <!-- <div class="order_form_container" id="pure_custom">
                     <div>
                         <label for="meat_topping">Meat toppings </label>
                         <select class="select_toppings" id="meat_toppings" multiple>
-                    <option value="pepperoni" class="top">Pepperoni</option>
-                    <option value="ham"class="top">Ham</option>
-                    <option value="steak"class="top">Steak</option>
-                    <option value="bacon"class="top">Bacon</option>
-                    <option value="chicken"class="top">Chicken</option>
+                             <option value="pepperoni" class="top">Pepperoni</option>
+                             <option value="ham"class="top">Ham</option>
+                             <option value="steak"class="top">Steak</option>
+                             <option value="bacon"class="top">Bacon</option>
+                             <option value="chicken"class="top">Chicken</option>
                      </select>
                     </div>
 
-                    <div>
+                    <div class="order_form_container">
                         <label for="vegetable_topping">Vegetable toppings </label>
                         <select class="select_toppings" id="veggie_toppings" multiple>
-                    <option value="mushrooms" class="top">Mushrooms</option>
-                    <option value="pineapple"class="Pineapple">Pineapple</option>
-                    <option value="tomatoes"class="top">Tomatoes</option>
-                    <option value="spinach"class="Spinach">Spinach</option>
-                    <option value="broccoli"class="top">Broccoli</option>
-                    </select>
+                             <option value="mushrooms" class="top">Mushrooms</option>
+                             <option value="pineapple"class="Pineapple">Pineapple</option>
+                             <option value="tomatoes"class="top">Tomatoes</option>
+                             <option value="spinach"class="Spinach">Spinach</option>
+                             <option value="broccoli"class="top">Broccoli</option>
+                             </select>
                     </div>
-                </div>
-                <div>
+                </div> -->
+                <div class="order_form_container">
                     <label for="extra_topping">Extra toppings </label>
                     <select class="select_toppings" id="extra_toppings" multiple data-mdb-clear-button="true">
-                    <option value="cheese" class="top">Cheese</option>
-                     <option value="olives"class="top">Olives</option>
-                     <option value="chillies"class="top">Chillies</option>
-                     <option value="pickles"class="top">Pickles</option>
-                     <option value="bell_peppers"class="top">Bell Peppers</option>
-                     <option value="Onion"class="Onion">Onion</option>
-             </select>
+                          <option value="cheese" class="top">Cheese</option>
+                          <option value="olives"class="top">Olives</option>
+                          <option value="chillies"class="top">Chillies</option>
+                          <option value="pickles"class="top">Pickles</option>
+                          <option value="bell_peppers"class="top">Bell Peppers</option>
+                          <option value="Onion"class="Onion">Onion</option>
+                         </select>
                 </div>
-            </div>
-            <div>
-
-                <span id="current_total"><p> Total</p></span>
-
-                <div>
-                    <button id="submit" type="submit" class="btn">Another Order</button>
+                <div class="order_form_container" id="order_btns">
+                    <div id="current_total">
+                        <p>Current Total</p>
+                    </div>
+                    <a href="#delivery_pickup">
+                        <div>
+                            <!-- <button id="submit" type="submit" class="btn">Another Order</button> -->
+                        </div>
+                    </a>
                 </div>
-            </div>
-            </div>
-        </form>
+                <div class="radios">
+                    <label class="radio-inline"><input type="radio" name="optradio" checked>Pick-up</label>
+                    <label class="radio-inline"><input type="radio" name="optradio" id = "delivery">Delivery</label>
+                </div>
+                <!-- <button>Another Order</button> -->
 
-        <div>
-
-            <h2>Order Items</h2>
-            <p id="sizePrint"> <span class="order_size"></span></p>
-            <p id="crustPrint"> <span class="order_size"></span></p>
-            <p id="toppingsPrint"><span class="order_size"></span></p>
-            <p id="totalsPrint"><span class="order_size"></span></p>
-
+            </form>
+            </form>
         </div>
+        <div class="order_totals_container">
+            <div class="order_items">
+                <h2>Order Items</h2>
+                <p id="sizePrint"> <span class="order_size"></span></p>
+                <p id="crustPrint"> <span class="order_size"></span></p>
+                <p id="toppingsPrint"><span class="order_size"></span></p>
+                <p id="totalsPrint"><span class="order_size"></span></p>
 
-        <div>
-            <h2>Orders:</h2>
-            <ul id="orders">
-                <p id="totals">Total = <span class="order_size"></span></p>
+            </div>
+
+            <div class="order_items">
+                <h2>Orders:</h2>
+                <ul id="orders">
+                    <p id="totals">Total = <span class="order_size"></span></p>
+            </div>
         </div>
-
 
     </section>
-    <section>
+    <section id="delivery_pickup">
         <div>
-            <h2>Delivery or pickup</h2>
+            <!-- <h2>Delivery or pickup</h2>
             <form action="">
 
                 <div class="radios">
                     <label class="radio-inline"><input type="radio" name="optradio" checked>Pick-up</label>
                     <label class="radio-inline"><input type="radio" name="optradio" id = "delivery">Delivery</label>
                 </div>
-            </form>
+                <button>Another Order</button>
+
+            </form> -->
+        </div>
+        <div>
+            <h2 id="total_cost"> <span class="total_cost"></span></h2>
         </div>
     </section>
 
@@ -171,8 +187,8 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.min.js" integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-    <!-- <script src="main.js"></script> -->
-    <script src="/main copy.js"></script>
+    <script src="main copy 2.js"></script>
+    <!-- <script src="/main copy.js"></script> -->
     <!-- <script src="test.js"></script> -->
 </body>
 

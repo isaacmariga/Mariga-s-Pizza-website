@@ -6,8 +6,6 @@ function pizza(size, crust, toppings) {
 
 let eachTotal = []
 let toppings = []
-let itemsTotal = []
-let totalOrder = []
 
 $(document).ready(function() {
     $('.select_toppings').selectpicker();
@@ -146,6 +144,8 @@ $("form").click(function() {
     $("p#toppingsPrint").html("<span class='order_size'>" + "Toppings = " + classicLabel + "  " +
         toppings.flat() + " @ " +
         toppingTotal + "</span>");
+    $("p#totalsPrint").html("<span class='order_size'>" + "Delivery = " +
+        delivery + "</span>");
     $("p#totalsPrint").html("<span class='order_size'>" + "Total = " +
         size + " @ " +
         itemsTotal + "</span>");
@@ -160,44 +160,33 @@ $("form").click(function() {
 
 })
 
-console.log(pizza)
+// $("#btn").click(function() {
+$("form#order_form").submit(function(event) {
+    event.preventDefault();
 
-let addOrder = (ev) => {
-    ev.preventDefault();
     let newOrder = new pizza(size, crust, toppings);
-}
 
-totalOrder.push(newOrder)
-document.forms[0].reset;
+    eachTotal.push(itemsTotal)
 
+    let totals = eachTotal.reduce((a, b) => a + b, 0)
+    console.log(newOrder.Order())
 
-console.log(totalOrder)
-eachTotal.push(itemsTotal)
+    $("ul#orders").append("<li><span class='orders'>" + newOrder.Order() + " @ " +
+        itemsTotal + "</span></li>");
+    $("p#totals").html("<span class='order_size'>" + "Total = " +
+        totals + "</span>");
 
-let totals = eachTotal.reduce((a, b) => a + b, 0)
-console.log(newOrder.Order())
+    $("#top1:selected").removeAttr("selected")
 
-$("ul#orders").append("<li><span class='orders'>" + newOrder.Order() + " @ " +
-    itemsTotal + "</span></li>");
-$("p#totals").html("<span class='order_size'>" + "Total = " +
-    totals + "</span>");
-
-
-$("form#btn").click(function(addOrder) {
+    finalBill = totals + delivery
+        // console.log(totals)
+    console.log(delivery)
+        // console.log(finalBill)
 
 
+    $("h2#total_cost").html("<span class='total_cost'>" + "Total = " +
+        finalBill + "</span>");
 });
-
-
-finalBill = totals + delivery
-    // console.log(totals)
-console.log(delivery)
-    // console.log(finalBill)
-
-
-$("h2#total_cost").html("<span class='total_cost'>" + "Total = " +
-    finalBill + "</span>");
-
 
 $("#classic_btn").click(function() {
     $("#classics_container").show();
@@ -207,3 +196,6 @@ $("#custom_btn").click(function() {
     $("#classics_container").hide();
     $("#pure_custom").show();
 })
+total = (delivery + itemsTotal)
+
+console.log(total)

@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
     border: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    border-radius: 10px;
+    /* padding: 2px; */
 }
 
 h1,
@@ -22,7 +26,7 @@ h1 {
 }
 
 h2 {
-    font-size: 2.5em;
+    font-size: 3em;
 }
 
 h3 {
@@ -33,6 +37,10 @@ h4 {
     font-size: 1.5em;
 }
 
+label {
+    font-weight: 600;
+}
+
 .hero {
     display: grid;
     height: 100%;
@@ -40,19 +48,15 @@ h4 {
     background-color: rgba(0, 0, 0, 0.521);
     background-size: cover;
     background-repeat: no-repeat;
-    /* place-items: center; */
-    justify-items: center;
-    justify-items: right;
+    text-justify: center;
+    place-items: center;
     color: white;
     padding: 10vw;
     overflow: hidden;
 }
 
 .hero_text {
-    text-align: right;
-    justify-items: right;
-    align-self: right;
-    text-justify: center;
+    text-align: center;
 }
 
 .hero_buttons {
@@ -88,15 +92,15 @@ h4 {
 }
 
 .order_page {
-    height: 100vh;
+    height: 100%;
     width: auto;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     padding: 10vw;
 }
 
 .custom_classic {
-    height: 50vh;
+    height: 60vh;
     display: grid;
     place-items: center;
 }
@@ -105,6 +109,10 @@ h4 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+}
+
+.custom_classic {
+    padding: 30px;
 }
 
 .custom_classic>div>div {
@@ -116,31 +124,81 @@ h4 {
     border-radius: 40px;
 }
 
+
+/* 
 #classics_container {
     display: none;
+} */
+
+.order_page {
+    height: 100%;
+    width: ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
 }
 
-.order_page>form>div {
+.order_page>div>form>div {
     margin: 30px 0px;
 }
 
-.order_page>form>div>div>div {
-    margin: 30px 0px;
-}
-
-#meat_toppings {
-    display: none;
+.order_page>div>form>div>div {
+    margin-bottom: 30px;
 }
 
 .order_form {
     padding: 1em 3em;
     background-color: rgba(0, 0, 0, 0.418);
     border-radius: 20px;
-    margin: 2em;
-    box-shadow: 5px 10px 5px lightseagreen;
+    margin: 2em 0em;
+    box-shadow: 5px 10px 5px rgb(0, 0, 0);
+}
+
+.order_totals_container {
+    padding: 1em 3em;
+    background-color: rgba(0, 0, 0, 0.418);
+    border-radius: 20px;
+    margin: 2em 0em;
+    box-shadow: 5px 10px 5px rgb(0, 0, 0);
+}
+
+#order_btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
 }
 
 #current_total {
-    padding: 10px;
-    background-color: lime;
+    text-justify: center;
+    text-align: center;
+    align-self: center;
+    padding: 5px 2px;
+    color: black;
+    background-color: rgb(230, 225, 225);
+    cursor: pointer;
+}
+
+#current_total:hover {
+    background-color: rgb(197, 193, 193);
+    ;
+}
+
+.btn {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.order_items {
+    margin-top: 3em;
+    padding: 20px;
+}
+
+.order_title {
+    padding: 20px;
+}
+
+#delivery_pickup {
+    height: 60vh;
+    display: grid;
+    place-items: center;
 }
