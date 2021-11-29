@@ -7,8 +7,7 @@
 None
 
 ## Live link
-* Follow the link https://isaacmariga.github.io/pizza_website/
-
+* Follow the link https://isaacmariga.github.io/Mariga-s-Pizza-website/
 ## Known Bugs
 {main.js is not linked to index.html }
 ## Technologies Used
